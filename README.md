@@ -4,13 +4,11 @@ A simple webapp to visualize information about Lightning Network nodes using dat
 
 ## Developing (Steps to run)
 
-Once you've installed dependencies with `bun install`, start a development server:
+Once you've installed dependencies with `bun install`, and created an env file with
+`cp .env.example .env`, start a development server:
 
 ```bash
 bun run dev
-
-# or start the server and open the app in a new browser tab
-bun run dev -- --open
 ```
 
 ## Building
