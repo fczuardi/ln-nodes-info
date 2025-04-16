@@ -1,5 +1,5 @@
-<div class="m-auto w-2/3 py-8 bg-slate-200 px-8 h-screen shadow-xl">
-  <h1 class="text-2xl my-8">Lightning Network Information</h1>
+<div class="m-auto h-screen w-2/3 bg-slate-200 px-8 py-8 shadow-xl">
+  <h1 class="my-8 text-2xl">Lightning Network Information</h1>
   <nav>
     <ul>
       <li><a class="underline" href="./nodes">Popular Nodes</a></li>
@@ -13,4 +13,3 @@
     background-color: theme(--color-amber-700);
   }
 </style>
-

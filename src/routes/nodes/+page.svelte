@@ -13,7 +13,7 @@
       Ordered by Connectivity <a href="#fn1" aria-describedby="fn1" class="underline">*</a>
     </p>
   </header>
-  <a id="list-header" class="md:h-30 md:block"/>
+  <a id="list-header" class="md:block md:h-30" />
   <ol class="bg-white md:m-auto md:max-w-2/3">
     {#each nodes as node}
       <li class="flex justify-between border-b border-zinc-500 p-2">
@@ -26,8 +26,9 @@
     <div id="footnotes">
       <ol>
         <li id="fn1">
-          source: <a class="underline" href="https://mempool.space/lightning/nodes/rankings/connectivity"
-            >mempool.space</a
+          source: <a
+            class="underline"
+            href="https://mempool.space/lightning/nodes/rankings/connectivity">mempool.space</a
           > <a href="#list-header" aria-label="Back to reference">↩</a>
         </li>
       </ol>
