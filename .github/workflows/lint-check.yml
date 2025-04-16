@@ -1,0 +1,23 @@
+# Fix code formatting upon pushes to the main branch
+name: autofix.ci
+on:
+  push:
+    branches:
+      - main
+permissions: {}
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Prettier Format
+        run: |
+          bun install
+          bun run format
+      - name: Autofix Format
+        uses: autofix-ci/action@v1
+        with:
+          commit-message: 'Apply Prettier format'
