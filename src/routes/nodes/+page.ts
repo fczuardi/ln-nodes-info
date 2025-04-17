@@ -17,12 +17,15 @@ const catchError = (promise: Promise<any>) => {
 
 interface Node {
   channels: Number;
-  alias: String;
+  alias: string;
+  publicKey: string;
 }
 interface NodesPageData {
   nodes: Array<Node>;
-  errorTitle: null | String;
-  errorMessage: null | String;
+  error: {
+    title: null | string;
+    message: null | string;
+  }
 }
 export const load: PageLoad = async ({ fetch }): Promise<NodesPageData> => {
   const url = `${PUBLIC_MEMPOOLSPACE_API_URL}${PUBLIC_MEMPOOLSPACE_ENDPOINT_LN_RANKING_CONNECTIVITY}`; // response ok and json
@@ -38,24 +41,24 @@ export const load: PageLoad = async ({ fetch }): Promise<NodesPageData> => {
     errorTitle = `Fetch Failed`;
     errorMessage = fetchError.message;
     console.error(fetchError);
-    return { errorTitle, errorMessage, nodes: [] };
+    return { error: { title: errorTitle, message: errorMessage }, nodes: [] };
   }
   if (res.ok === false) {
     errorTitle = `API Error`;
     errorMessage = `Response status ${res.status}`;
     console.error(errorMessage);
     console.error(res);
-    return { errorTitle, errorMessage, nodes: [] };
+    return { error: { title: errorTitle, message: errorMessage }, nodes: [] };
   }
 
   const [jsonError, nodes] = await catchError(res.json());
   if (jsonError !== null) {
     errorTitle = 'API Error';
-    errorMessage = 'API Error: Invalid JSON';
+    errorMessage = 'Invalid JSON';
     console.error(errorMessage);
     console.error(jsonError);
-    return { errorTitle, errorMessage: 'Invalid JSON', nodes: [] };
+    return { error: { title: errorTitle, message: errorMessage }, nodes: [] };
   }
 
-  return { errorTitle, errorMessage, nodes };
+  return { error: { title: errorTitle, message: errorMessage }, nodes };
 };
