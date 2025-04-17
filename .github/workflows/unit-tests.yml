@@ -1,0 +1,18 @@
+# Run all unit tests on a branch
+name: Unit tests
+on:
+  pull_request:
+jobs:
+  test_unit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install Deps
+        run: |
+          bun install
+          cp .env.example .env
+      - name: Vitest
+        run: bun run test:unit -- run --reporter=verbose
