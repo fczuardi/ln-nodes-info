@@ -25,7 +25,7 @@ interface NodesPageData {
   error: {
     title: null | string;
     message: null | string;
-  }
+  };
 }
 export const load: PageLoad = async ({ fetch }): Promise<NodesPageData> => {
   const url = `${PUBLIC_MEMPOOLSPACE_API_URL}${PUBLIC_MEMPOOLSPACE_ENDPOINT_LN_RANKING_CONNECTIVITY}`; // response ok and json
