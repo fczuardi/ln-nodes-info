@@ -7,7 +7,14 @@ describe('/nodes/NodeCard.svelte', () => {
   const alias = 'ACINQ';
   const publicKey = '03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f';
   const channels = 2298;
-  const props = { alias, publicKey, channels };
+  const capacity = 36010516297;
+  const firstSeen = 1522941222;
+  const updatedAt = 1661274935;
+  const country = {
+    en: 'United States',
+    'pt-BR': 'EUA',
+  };
+  const props = { alias, publicKey, channels, capacity, firstSeen, updatedAt, country };
 
   // utility function for basic check of if a text property gets its value rendered
   const propTextIsVisible = (propValue: string | number) => {

@@ -6,9 +6,16 @@ import {
 } from '$env/static/public';
 
 interface Node {
-  channels: number;
   alias: string;
   publicKey: string;
+  channels: number;
+  capacity: number;
+  firstSeen: number;
+  updatedAt: number;
+  country: {
+    en: string;
+    'pt-BR': string;
+  };
 }
 interface NodesPageData {
   nodes: Array<Node>;
