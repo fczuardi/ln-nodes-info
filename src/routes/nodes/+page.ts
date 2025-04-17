@@ -5,7 +5,7 @@ import {
 } from '$env/static/public';
 
 // small utility function to have golang style error handling instead of try/catch blocks
-const catchError = (promise: Promise<any>) => {
+const catchError = (promise: Promise<Response | JSON>) => {
   return promise
     .then((data) => {
       return [null, data];
@@ -16,7 +16,7 @@ const catchError = (promise: Promise<any>) => {
 };
 
 interface Node {
-  channels: Number;
+  channels: number;
   alias: string;
   publicKey: string;
 }
