@@ -8,7 +8,6 @@ A simple webapp to visualize information about Lightning Network nodes using dat
 
 ![Image](https://github.com/user-attachments/assets/9f5f0e43-b8f7-4c2e-9add-1942ba45801b)
 
-
 ## Developing (Steps to run)
 
 Once you've installed dependencies with `bun install`, and created an env file with
@@ -31,6 +30,7 @@ bun run test # one time
 ```
 
 ## Other checkers, linters and formatters
+
 ```bash
 bun run lint # code style and lint checks
 bun run check # type-check
@@ -79,25 +79,25 @@ AGPL v3
 
 - [Bipa](https://bipa.app)
 
------
+---
 
 ## Questions after 3 days
 
 ### What areas of the web app did you focus on?
 
-In order: 
+In order:
 
 0. Learn a new framework (ok, that's not really an area of the web app, but I had fun doing it)
 1. Responsivity
 2. UI/UX
 3. Unit tests
-3. CI
+4. CI
 
 ### What was the reason for your focus? What problems were you trying to solve?
 
 Personal growth, the learning part, and excitement for new knowlege. That was my main reasons.
 
-App-wise, I can say I choose to focus on responsivity and UX, for the same reason, also for 
+App-wise, I can say I choose to focus on responsivity and UX, for the same reason, also for
 personal growth :)... I like to craft, and tweaking interfaces is something I enjoy.
 
 The problem I am trying to solve is the challenge of presenting information in a clean and
@@ -106,7 +106,6 @@ Excel spreadsheet) and beauty. I am not super versed in the visual arts field, m
 a coder, but I am happy with the current state of this demo in this short period. I know it was
 suppose to be a throw away dirty take home exercise, but why not use those opportunities to be a
 try-harder and start some serious open-source project as a side-quest bonus.
-
 
 ### How long did you spend on this project?
 
@@ -122,7 +121,7 @@ Yes, I think I made some trade-offs in order to have a deliverable in time. For 
 some good-enough-for-demo sats conversion to BTC that does not take into account possible floating
 point problems, it's marked in the code as a `TODO` for later. Another tradeoff, was the use of a
 simple auto refresh using meta tags for this first version, instead of a proper button or
-pull-to-refresh mechanism. Another area that I would like to explore with more time are the 
+pull-to-refresh mechanism. Another area that I would like to explore with more time are the
 build and deployment possibilities in the Svelte ecossystem, as well as all sorts of other
 optimizations.
 
@@ -140,17 +139,16 @@ provider. Some trust is OK, but this is a weak part of the project still.
 
 ### Is there any other information you’d like us to know?
 
-I had a blast, learning a new framework and getting back to frontend coding after some time in 
+I had a blast, learning a new framework and getting back to frontend coding after some time in
 the python dungeons is a breath of fresh air. I am grateful for the excuse/reason Bipa hiring
 proccess gave me to build and read and learn new things, and I hope to have more opportunities to
 exchange moments, work and stories in the future.
 
 Also, the restriction on not using AI for this task was a good incentive to get my hands dirty,
 I am oldschool and I am able to get around without clever autocompleters. In my day-to-day life
-I use chatgpt for some tasks and I try the agents and tools at my disposal. But I also like to 
+I use chatgpt for some tasks and I try the agents and tools at my disposal. But I also like to
 force my own brain and the feeling of achievement when we encounter and pass a barrier only with the help
 of good documentation and our own persistence is unbeatable! We can "vibe" with manuals, just ask
 OpenBSD folks ;)
 
 THANK YOU!!
-

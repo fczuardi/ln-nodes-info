@@ -15,7 +15,7 @@ describe('/nodes/NodeCard.svelte', () => {
     en: 'United States',
     'pt-BR': 'EUA',
   };
-  const index = 0
+  const index = 0;
   const props = { index, alias, publicKey, channels, capacity, firstSeen, updatedAt, country };
 
   // utility function for basic check of if a text property gets its value rendered
