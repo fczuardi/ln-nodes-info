@@ -1,27 +1,11 @@
 <script lang="ts">
+  import {
+    displayCapacity,
+    displayCountry,
+    displayDate,
+    displayDateTooltip,
+  } from './valueRenderers';
   let { index, alias, channels, publicKey, capacity, firstSeen, updatedAt, country } = $props();
-
-  // TODO: maybe improve this hack to a more precise option using bigint or
-  // something like that to prevent potential pitfalls of floating numbers
-  function displayCapacity(capacityInSats: number) {
-    const satoshisInOneBtc = 100_000_000;
-    const decimalPlaces = 8;
-    return (capacityInSats / satoshisInOneBtc).toFixed(decimalPlaces);
-  }
-  // TODO: take into consideration i18n
-  // TODO: or even better, use a flag emoji
-  function displayCountry(
-    countryObject: { en: string; 'pt-BR': string } | undefined,
-    language: 'en' | 'pt-BR'
-  ) {
-    return countryObject?.[language] || 'not informed';
-  }
-  function displayDate(unixtime: number) {
-    return new Date(unixtime * 1000).toLocaleDateString();
-  }
-  function displayDateTooltip(unixtime: number) {
-    return new Date(unixtime * 1000).toISOString();
-  }
 </script>
 
 <details
@@ -63,7 +47,7 @@
       >
         {publicKey}
       </h2>
-      <div class="text-xs font-bold text-nowrap text-gray-600" title="capacity">
+      <div class="text-xs font-bold text-nowrap text-gray-600" title="capacity: {capacity} sats">
         {displayCapacity(capacity)} BTC
       </div>
     </div>

@@ -2,6 +2,7 @@ import { describe, test, expect } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import '@testing-library/jest-dom/vitest';
 import NodeCard from './NodeCard.svelte';
+import { displayCapacity, displayCountry, displayDate } from './valueRenderers';
 
 describe('/nodes/NodeCard.svelte', () => {
   const alias = 'ACINQ';
@@ -14,7 +15,8 @@ describe('/nodes/NodeCard.svelte', () => {
     en: 'United States',
     'pt-BR': 'EUA',
   };
-  const props = { alias, publicKey, channels, capacity, firstSeen, updatedAt, country };
+  const index = 0
+  const props = { index, alias, publicKey, channels, capacity, firstSeen, updatedAt, country };
 
   // utility function for basic check of if a text property gets its value rendered
   const propTextIsVisible = (propValue: string | number) => {
@@ -41,8 +43,8 @@ describe('/nodes/NodeCard.svelte', () => {
   });
 
   test('should display channels', propTextIsVisible(channels));
-  test.todo('should display capacity');
-  test.todo('should display firstSeen');
-  test.todo('should display updatedAt');
-  test.todo('should display country');
+  test('should display capacity', propTextIsVisible(`${displayCapacity(capacity)} BTC`));
+  test('should display firstSeen', propTextIsVisible(displayDate(firstSeen)));
+  test('should display updatedAt', propTextIsVisible(displayDate(updatedAt)));
+  test('should display country', propTextIsVisible(displayCountry(country, 'en')));
 });
