@@ -6,4 +6,5 @@
   <p class="flex justify-center text-sm/8">
     Ordered by Connectivity <a href="#fn1" aria-describedby="fn1" class="underline">*</a>
   </p>
+    <a data-sveltekit-reload class="cursor-pointer bg-slate-500 hover:bg-pink-500 p-2 rounded-sm" href="/nodes">Refresh</a>
 </header>
