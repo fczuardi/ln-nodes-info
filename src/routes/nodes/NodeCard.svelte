@@ -2,31 +2,31 @@
   let { alias, channels, publicKey, capacity, firstSeen, updatedAt, country } = $props();
   // TODO: maybe improve this hack to a more precise option using bigint or
   // something like that to prevent potential pitfalls of floating numbers
-  function displayCapacity(capacityInSats) {
+  function displayCapacity(capacityInSats: number) {
     const satoshisInOneBtc = 100_000_000;
     const decimalPlaces = 8;
     return (capacityInSats / satoshisInOneBtc).toFixed(decimalPlaces);
   }
   // TODO: take into consideration i18n
   // TODO: or even better, use a flag emoji
-  function displayCountry(countryObject, language) {
+  function displayCountry(countryObject:{'en': string, 'pt-BR': string} | undefined, language: 'en' | 'pt-BR') {
     return countryObject?.[language] || 'not informed';
   }
-  function displayDate(unixtime) {
+  function displayDate(unixtime: number) {
     return new Date(unixtime * 1000).toLocaleDateString();
   }
-  function displayDateTooltip(unixtime) {
+  function displayDateTooltip(unixtime: number) {
     return new Date(unixtime * 1000).toISOString();
   }
 </script>
 
 <details
   aria-describedby={`alias-${publicKey}`}
-  class="group flex flex-col content-center gap-2 border-b border-zinc-500 p-2"
+  class="group flex flex-col content-center gap-2 border-b border-zinc-500 p-2 open:shadow-lg"
 >
   <summary class="flex flex-row justify-between">
     <h1 id={`alias-${publicKey}`} title="alias" class="grow truncate">{alias}</h1>
-    <p class="mr-4 text-zinc-400 opacity-0 group-hover:opacity-100">click me</p>
+    <p class="mr-4 text-zinc-400 opacity-0 group-hover:opacity-100 group-open:group-hover:opacity-0">click me</p>
     <div class="text-gray-600" title="channels">{channels}</div>
   </summary>
 
