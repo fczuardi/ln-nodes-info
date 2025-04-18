@@ -14,9 +14,9 @@
     {#if data.error.title === null}
       <div class="bg-white md:m-auto md:max-w-2/3">
         <ol>
-          {#each nodes as node (node.publicKey)}
+          {#each nodes as node, index (index)}
             <li>
-              <NodeCard {...node} />
+              <NodeCard {index} {...node} />
             </li>
           {/each}
         </ol>
