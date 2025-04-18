@@ -130,7 +130,7 @@ optimizations.
 The reliance on a 3rd-party API for the main purpose of this app, that is to display information
 about participant nodes of the Lightning Network. Ideally we could have at least some redundancy
 between data providers, by consuming multiple APIs. Or, even better, gather the data ourselves,
-using on premises machines that we'd setup to be part of thes network.
+using on premises machines that we'd setup to be part of this network.
 
 "Don't trust, verify" is one of the mantras in the Bitcoin community, and it has some wisdom in it,
 I know that pragmatically we cannot always have the most verifiable/robust solution, trade-offs
