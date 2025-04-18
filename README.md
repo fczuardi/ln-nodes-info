@@ -120,7 +120,7 @@ and doing the actual assignment would be something between 10-15 hours.
 Yes, I think I made some trade-offs in order to have a deliverable in time. For example: I used
 some good-enough-for-demo sats conversion to BTC that does not take into account possible floating
 point problems, it's marked in the code as a `TODO` for later. Another tradeoff, was the use of a
-simple auto refresh using meta tags for this first version, instead of a proper button or
+simple refresh-the-whole-page button for this first version, instead of a proper button or
 pull-to-refresh mechanism. Another area that I would like to explore with more time are the
 build and deployment possibilities in the Svelte ecossystem, as well as all sorts of other
 optimizations.
